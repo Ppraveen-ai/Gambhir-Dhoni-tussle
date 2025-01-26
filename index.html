@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambhir-Dhoni Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .fact {
+            font-weight: bold;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .image-container img {
+            width: 500px; /* Set image width to 500px */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gambhir-Dhoni Fun Facts</h1>
+        <p id="factDisplay">Click the button to see a fun fact!</p>
+        <button id="factButton">Show Random Fact</button>
+        <div class="image-container" id="factImage"></div>
+    </div>
+    <script>
+        const facts = [
+            {
+                fact: "Captaincy Rivalry",
+                description: "The rivalry between Gambhir and Dhoni intensified during their captaincy stints in the Indian Premier League (IPL). Gambhir led the Kolkata Knight Riders (KKR) to two IPL titles, while Dhoni's Chennai Super Kings (CSK) became one of the most successful franchises under his leadership.",
+                color: "#FF5733", // Red
+                emoji: "🏆"
+            },
+            {
+                fact: "Public Comments",
+                description: "Both players have made public comments about each other over the years. Gambhir has been vocal about his views on team selection and leadership styles, which sometimes led to tensions between the two.",
+                color: "#33FF57", // Green
+                emoji: "🗣️"
+            },
+            {
+                fact: "On-Field Incidents",
+                description: "Their rivalry was not just limited to words; there were a few on-field incidents during matches where they exchanged heated words, particularly during IPL matches, showcasing their competitive spirits.",
+                color: "#3357FF", // Blue
+                emoji: "🔥"
+            },
+            {
+                fact: "Social Media Banter",
+                description: "The tussle has also spilled over to social media, where both players have occasionally taken subtle digs at each other, leading to speculation among fans and media about their relationship.",
+                color: "#FF33A1", // Pink
+                emoji: "💬"
+            },
+            {
+                fact: "Different Leadership Styles",
+                description: "Gambhir and Dhoni have contrasting leadership styles. Gambhir is known for his aggressive and passionate approach, while Dhoni is often praised for his calm and composed demeanor, which has led to discussions about their effectiveness as leaders.",
+                color: "#FFC300", // Yellow
+                emoji: "⚖️"
+            },
+            {
+                fact: "Retirement and Legacy",
+                description: "After retiring from international cricket, both players have continued to be involved in cricket commentary and analysis, where they occasionally reflect on their playing days and the rivalry, adding a layer of nostalgia to their competitive history.",
+                color: "#DAF7A6", // Light Green
+                emoji: "📺"
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<span class="fact" style="color: ${fact.color};">${fact.emoji} ${fact.fact}</span>: ${fact.description}`;
+            document.getElementById('factImage').innerHTML = `
+                <img src="https://newsd.in/wp-content/uploads/2022/04/dhoni-gambhir-1.jpg" alt="Gambhir and Dhoni" />
+            `;
+        });
+    </script>
+</body>
+</html>
